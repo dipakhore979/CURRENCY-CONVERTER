@@ -43,7 +43,21 @@ const updateFlag = (element)=>{
 }
 
 
-// ADD EVENT LISTNERT WHEN BUTTON IS CLICKED
+//SWAP CURRENCY
+const swapBtn = document.querySelector(".dropdown i");
+
+swapBtn.addEventListener("click", () => {
+    let temp = fromCurr.value;
+    fromCurr.value = toCurr.value;
+    toCurr.value = temp;
+
+    updateFlag(fromCurr);
+    updateFlag(toCurr);
+
+    updateExChangeRate();
+});
+
+// ADD EVENT LISTNER WHEN BUTTON IS CLICKED
 btn.addEventListener("click", (event)=>{
     event.preventDefault();
     updateExChangeRate()
